@@ -1,0 +1,7 @@
+api:
+  key: "INSERT OPENWEATHER API KEY HERE"
+  version: "2.5"
+  url: "https://api.openweathermap.org"
+
+server:
+  port: 8090
