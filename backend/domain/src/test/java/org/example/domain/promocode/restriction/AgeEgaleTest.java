@@ -31,7 +31,7 @@ class AgeEgaleTest {
 
         ValidationEtat valider = restriction.valider(utilisateur, validationEtat);
 
-        assertThat(valider.isValider()).isTrue();
+        assertThat(valider.isValide()).isTrue();
     }
 
     @Test
@@ -43,7 +43,7 @@ class AgeEgaleTest {
 
         ValidationEtat valider = restriction.valider(utilisateur, validationEtat);
 
-        assertThat(valider.isValider()).isFalse();
+        assertThat(valider.isValide()).isFalse();
         assertThat(valider.getCauses())
                 .extracting(Cause::message)
                 .contains("L'âge n'est pas égale à 20 ans");

@@ -25,7 +25,7 @@ class AgeIntervalStricteTest {
 
         ValidationEtat etat = ageIntervalStricte.valider(utilisateur, new ValidationEtat());
 
-        assertThat(etat.isValider()).isTrue();
+        assertThat(etat.isValide()).isTrue();
     }
 
     @Test
@@ -36,7 +36,7 @@ class AgeIntervalStricteTest {
 
         ValidationEtat etat = ageIntervalStricte.valider(utilisateur, new ValidationEtat());
 
-        assertThat(etat.isValider()).isFalse();
+        assertThat(etat.isValide()).isFalse();
         assertThat(etat.getCauses())
                 .extracting(Cause::message)
                 .contains("L'âge n'est pas compris entre  18 ans et 30 ans");

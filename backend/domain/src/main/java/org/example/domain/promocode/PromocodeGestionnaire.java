@@ -47,7 +47,7 @@ public class PromocodeGestionnaire implements Validation {
     }
 
     private PromocodeEtat toPromocodeEtat(ValidationEtat validationEtat, Promocode promocode) {
-        if (validationEtat.isValider()) {
+        if (validationEtat.isValide()) {
             return new Valide(promocode.getNom(), validationEtat.getStatut(), promocode.getAvantage());
         } else {
             return new Invalide(promocode.getNom(), validationEtat.getStatut(), validationEtat.getCauses());

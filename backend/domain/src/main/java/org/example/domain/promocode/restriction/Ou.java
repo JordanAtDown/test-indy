@@ -14,7 +14,7 @@ public class Ou implements Restriction {
     @Override
     public ValidationEtat valider(Utilisateur utilisateur, ValidationEtat validationEtat) {
         if (estValide(utilisateur)) {
-            validationEtat.valider();
+            validationEtat.valide();
         } else {
             operateurDroit.valider(utilisateur, validationEtat);
             operateurGauche.valider(utilisateur, validationEtat);

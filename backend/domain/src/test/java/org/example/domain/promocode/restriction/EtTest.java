@@ -22,7 +22,7 @@ class EtTest {
 
         ValidationEtat etat = et.valider(utilisateur, new ValidationEtat());
 
-        assertThat(etat.isValider()).isTrue();
+        assertThat(etat.isValide()).isTrue();
     }
 
     @Test
@@ -35,6 +35,6 @@ class EtTest {
 
         ValidationEtat etat = et.valider(utilisateur, new ValidationEtat());
 
-        assertThat(etat.isValider()).isFalse();
+        assertThat(etat.isValide()).isFalse();
     }
 }

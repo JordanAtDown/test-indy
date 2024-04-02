@@ -12,14 +12,14 @@ import org.junit.jupiter.api.Test;
 class MeteoTest {
 
     @Test
-    @DisplayName("Devrait valider la restriction quand les condition météo sont correcte et que la température est strictement supérieur")
+    @DisplayName("Devrait valide la restriction quand les condition météo sont correcte et que la température est strictement supérieur")
     void doitValiderLaRestrictionQuandLaMeteoEstCorrectEtQueLaTemperatureEstSupérieur() {
         Meteo meteo = new Meteo("clear", 15);
         Utilisateur utilisateur = new Utilisateur(20, LocalDate.parse("2019-01-01"), 20, "clear");
 
         ValidationEtat etat = meteo.valider(utilisateur, new ValidationEtat());
 
-        assertThat(etat.isValider()).isTrue();
+        assertThat(etat.isValide()).isTrue();
     }
 
     @Test
@@ -30,7 +30,7 @@ class MeteoTest {
 
         ValidationEtat etat = meteo.valider(utilisateur, new ValidationEtat());
 
-        assertThat(etat.isValider()).isFalse();
+        assertThat(etat.isValide()).isFalse();
     }
 
     @Test
@@ -41,7 +41,7 @@ class MeteoTest {
 
         ValidationEtat etat = meteo.valider(utilisateur, new ValidationEtat());
 
-        assertThat(etat.isValider()).isFalse();
+        assertThat(etat.isValide()).isFalse();
     }
 
     @Test
@@ -52,6 +52,6 @@ class MeteoTest {
 
         ValidationEtat etat = meteo.valider(utilisateur, new ValidationEtat());
 
-        assertThat(etat.isValider()).isFalse();
+        assertThat(etat.isValide()).isFalse();
     }
 }

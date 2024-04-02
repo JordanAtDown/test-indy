@@ -22,7 +22,7 @@ class DateIntervalTest {
 
         ValidationEtat etat = dateInterval.valider(utilisateur, validationEtat);
 
-        assertThat(etat.isValider()).isTrue();
+        assertThat(etat.isValide()).isTrue();
     }
 
     @Test
@@ -34,7 +34,7 @@ class DateIntervalTest {
 
         ValidationEtat etat = dateInterval.valider(utilisateur, validationEtat);
 
-        assertThat(etat.isValider()).isFalse();
+        assertThat(etat.isValide()).isFalse();
         assertThat(etat.getCauses())
                 .extracting(Cause::message)
                 .contains("La date du jour n'est pas comprise entre le 1/01/2019 et 30/06/2020");

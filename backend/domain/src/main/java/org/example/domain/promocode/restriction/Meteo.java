@@ -22,9 +22,9 @@ public class Meteo implements Restriction {
     @Override
     public ValidationEtat valider(Utilisateur utilisateur, ValidationEtat validationEtat) {
         if (estValide(utilisateur)) {
-            validationEtat.valider();
+            validationEtat.valide();
         } else {
-            validationEtat.invaliderAvec(cause);
+            validationEtat.invalideAvec(cause);
         }
         return validationEtat;
     }

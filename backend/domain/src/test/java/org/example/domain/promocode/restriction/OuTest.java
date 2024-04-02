@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 class OuTest {
 
     @Test
-    @DisplayName("Devrait valider la restriction quand au moins l'un des deux operateur est valide")
+    @DisplayName("Devrait valide la restriction quand au moins l'un des deux operateur est valide")
     void doitEtreValideQuandAuMoinsUnDesDeuxOperateurEstValide() {
         DateInterval dateInterval = new DateInterval(LocalDate.parse("2019-01-01"), LocalDate.parse("2020-06-30"));
         AgeEgale ageEgale = new AgeEgale(40);
@@ -23,7 +23,7 @@ class OuTest {
 
         ValidationEtat etat = ou.valider(utilisateur, validationEtat);
 
-        assertThat(etat.isValider()).isTrue();
+        assertThat(etat.isValide()).isTrue();
     }
 
     @Test
@@ -37,6 +37,6 @@ class OuTest {
 
         ValidationEtat etat = ou.valider(utilisateur, validationEtat);
 
-        assertThat(etat.isValider()).isFalse();
+        assertThat(etat.isValide()).isFalse();
     }
 }
