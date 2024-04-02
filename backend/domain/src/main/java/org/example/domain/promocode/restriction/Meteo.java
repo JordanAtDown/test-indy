@@ -31,7 +31,7 @@ public class Meteo implements Restriction {
 
     @Override
     public boolean estValide(Utilisateur utilisateur) {
-        return utilisateur.getConditionMeteo().equalsIgnoreCase(condition)
-                && utilisateur.getTemperature() > temperature;
+        return utilisateur.conditionMeteo().equalsIgnoreCase(condition)
+                && utilisateur.temperature() > temperature;
     }
 }

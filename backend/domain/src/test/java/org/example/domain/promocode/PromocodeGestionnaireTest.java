@@ -83,7 +83,7 @@ class PromocodeGestionnaireTest {
         assertThat(promocodeEtat).isInstanceOfSatisfying(Valide.class, valide -> {
             assertThat(valide.getNom()).isEqualTo("WeatherCode");
             assertThat(valide.getStatut()).isEqualTo(Statut.accepte);
-            assertThat(valide.getAvantage().getPourcentage()).isEqualTo(20);
+            assertThat(valide.getAvantage().pourcentage()).isEqualTo(20);
         });
     }
 

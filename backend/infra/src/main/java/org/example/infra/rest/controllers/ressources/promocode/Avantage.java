@@ -13,6 +13,6 @@ public class Avantage {
     private int pourcentage;
 
     public static Avantage toRessource(org.example.domain.promocode.Avantage avantage) {
-        return new Avantage(avantage.getPourcentage());
+        return new Avantage(avantage.pourcentage());
     }
 }

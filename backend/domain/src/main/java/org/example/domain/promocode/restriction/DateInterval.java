@@ -37,7 +37,7 @@ public class DateInterval implements Restriction {
 
     @Override
     public boolean estValide(Utilisateur utilisateur) {
-        return utilisateur.getDate().isAfter(borneInferieur)
-                && utilisateur.getDate().isBefore(borneSuperieur);
+        return utilisateur.date().isAfter(borneInferieur)
+                && utilisateur.date().isBefore(borneSuperieur);
     }
 }

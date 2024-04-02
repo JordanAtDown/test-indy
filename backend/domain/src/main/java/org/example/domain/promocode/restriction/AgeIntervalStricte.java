@@ -31,7 +31,7 @@ public class AgeIntervalStricte implements Restriction {
 
     @Override
     public boolean estValide(Utilisateur utilisateur) {
-        return utilisateur.getAge() < borneSuperieur
-                && utilisateur.getAge() > borneInferieur;
+        return utilisateur.age() < borneSuperieur
+                && utilisateur.age() > borneInferieur;
     }
 }

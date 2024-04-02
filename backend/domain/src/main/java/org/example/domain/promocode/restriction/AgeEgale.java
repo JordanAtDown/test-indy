@@ -29,6 +29,6 @@ public class AgeEgale implements Restriction {
 
     @Override
     public boolean estValide(Utilisateur utilisateur) {
-        return age == utilisateur.getAge();
+        return age == utilisateur.age();
     }
 }
