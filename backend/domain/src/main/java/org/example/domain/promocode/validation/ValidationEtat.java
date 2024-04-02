@@ -7,21 +7,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-@Getter
+
 public class ValidationEtat {
-
+    @Getter
     private Statut statut = Statut.refuse;
-    private boolean valider = false;
+    @Getter
+    private boolean valide = false;
+    @Getter
     private final List<Cause> causes = new ArrayList<>();
+    private boolean finalise = false;
 
-    public void valider() {
-        statut = Statut.accepte;
-        valider = true;
+    public void valide() {
+        if (!finalise) {
+            statut = Statut.accepte;
+            valide = true;
+        }
     }
 
-    public void invaliderAvec(Cause cause) {
+    public void invalideAvec(Cause cause) {
         statut = Statut.refuse;
-        valider = false;
+        valide = false;
+        finalise = true;
         causes.add(cause);
     }
 
